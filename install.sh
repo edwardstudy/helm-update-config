@@ -2,14 +2,14 @@
 
 set -euf -o pipefail
 
-PLUGIN_VERSION=${PLUGIN_VERSION:-"0.2.0"}
+PLUGIN_VERSION=${PLUGIN_VERSION:-"0.3.0"}
 
 file="${HELM_PLUGIN_DIR:-"$(helm home)/plugins/helm-update-config"}/bin/helm-update-config"
 
 mkdir -p $(dirname ${file})
 
 os=$(uname -s | tr '[:upper:]' '[:lower:]')
-url="https://github.com/zhanggbj/helm-update-config/releases/download/v${PLUGIN_VERSION}/helm-update-config_${os}_amd64"
+url="https://github.com/edwardstudy/helm-update-config/releases/download/v${PLUGIN_VERSION}/helm-update-config_${os}_amd64"
 echo "======debug ${url}"
 
 if command -v wget; then
